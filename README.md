@@ -15,7 +15,4 @@ Reports will be generated in form of testng reports at the below path -
 
 target/surefire-reports/index.html
 
-Chrome execution reports can be found at - 
-
-
-Firefox execution reports can be found at - 
+Execution reports can be found in the repository under the name surefire-reports.zip
