@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Regression Suite">
+<!--    <test name="Login">-->
+<!--        <classes>-->
+<!--            <class name="tests.LoginTests">-->
+<!--                <methods>-->
+<!--                    <include name="test_01_PageTitle"/>-->
+<!--                    <include name="test_02_NullWarriorName"/>-->
+<!--                    <include name="test_03_WarriorNameWithMoreThan10Characters"/>-->
+<!--                    <include name="test_04_ValidWarriorName"/>-->
+<!--                </methods>    -->
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
+    <test name="Are You Game Challenge">
+        <classes>
+            <class name="tests.AreYouGameChallengeTests">
+                <methods>
+                    <include name="test_01_verifyAreYouGameLandingPage"/>
+<!--                    <include name="test_02_NullWarriorName"/>-->
+<!--                    <include name="test_03_WarriorNameWithMoreThan10Characters"/>-->
+<!--                    <include name="test_04_ValidWarriorName"/>-->
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
