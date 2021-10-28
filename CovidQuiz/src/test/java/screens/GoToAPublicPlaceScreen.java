@@ -4,27 +4,27 @@ import org.openqa.selenium.By;
 import org.testng.Assert;
 import utils.Common;
 
-public class TakeTheBusScreen extends Common {
+public class GoToAPublicPlaceScreen extends Common {
 
-    public static By takeTheBusChallengeTitle = By.id("bus");
-    public static By buttonStartTakeTheBus = By.id("bus_timer_start");
+    public static By takeTheBusChallengeTitle = By.id("restaurant");
+    public static By buttonStart = By.id("restaurant_timer_start");
     public static By answer1 = By.xpath("//a[contains(@id,'answer_1')]");
     public static By answer2 = By.xpath("//a[contains(@id,'answer_2')]");
-    public static By successModalMessageText = By.xpath("//div[@id='bus_correct_modal']//h5[@id='staticBackdropLabel']");
-    public static By successModalPoints = By.xpath("//div[@id='bus_correct_modal']//p[@id='score']");
-    public static By failureModalMessageText = By.xpath("//div[@id='bus_incorrect_modal']//h5[@id='staticBackdropLabel']");
-    public static By buttonCheckYourFinalScore = By.xpath("//div[@id='bus_correct_modal']//button[@id='leaderboard_link']");
-    public static By buttonTryTheNextBattle = By.xpath("//div[@id='bus_correct_modal']//button[@id='close_correct_modal_btn']");
+    public static By successModalMessageText = By.xpath("//div[contains(@id,'correct_modal')]//h5[@id='staticBackdropLabel']");
+    public static By successModalPoints = By.xpath("//div[contains(@id,'correct_modal')]//p[@id='score']");
+    public static By failureModalMessageText = By.xpath("//div[contains(@id,'incorrect_modal')]//h5[@id='staticBackdropLabel']");
+    public static By buttonCheckYourFinalScore = By.xpath("//div[contains(@id,'correct_modal')]//button[@id='leaderboard_link']");
+    public static By buttonTryTheNextBattle = By.xpath("//div[contains(@id,'correct_modal')]//button[@id='close_correct_modal_btn']");
     public static By buttonTryAgain = By.xpath("//div[contains(@id,'correct_modal')]//button[@id='close_incorrect_modal_btn']");
     public static By outOfTimeTryAgain = By.xpath("//div[contains(@id,'out_of_time')]//button[contains(text(),'Try again')]");
     public static By outOfTimeReturnHome = By.xpath("//div[contains(@id,'out_of_time')]//button[contains(text(),'Return Home')]");
 
-    public static void correctAnswerTakeTheBusChallengeTryNextBattle() {
+    public static void correctAnswerPublicPlaceChallengeTryNextBattle() {
         driver.findElement(takeTheBusChallengeTitle).click();
         driver.switchTo().activeElement();
-        waitForElementPrescence(buttonStartTakeTheBus);
-        Assert.assertEquals(driver.findElement(TakeTheBusScreen.buttonStartTakeTheBus).getText(), "Start");
-        driver.findElement(buttonStartTakeTheBus).click();
+        waitForElementPrescence(buttonStart);
+        Assert.assertEquals(driver.findElement(buttonStart).getText(), "Start");
+        driver.findElement(buttonStart).click();
         waitForElementPrescence(driver.findElement(answer1));
         Assert.assertTrue(driver.findElement(answer1).isDisplayed());
         driver.switchTo().defaultContent();
@@ -66,15 +66,15 @@ public class TakeTheBusScreen extends Common {
         Assert.assertTrue(driver.findElement(successModalPoints).getText().contains("you have scored 100 points!"));
         waitForElementPrescence(driver.findElement(buttonTryTheNextBattle));
         driver.findElement(buttonTryTheNextBattle).click();
-        Assert.assertEquals(driver.getCurrentUrl(),"https://responsivefight.herokuapp.com/restaurant");
+        Assert.assertTrue(driver.getCurrentUrl().contains("https://responsivefight.herokuapp.com/"));
     }
 
-    public static void correctAnswerTakeTheBusChallengeCheckYourFinalScore() {
+    public static void correctAnswerPublicPlaceChallengeCheckYourFinalScore() {
         driver.findElement(takeTheBusChallengeTitle).click();
         driver.switchTo().activeElement();
-        waitForElementPrescence(buttonStartTakeTheBus);
-        Assert.assertEquals(driver.findElement(TakeTheBusScreen.buttonStartTakeTheBus).getText(), "Start");
-        driver.findElement(buttonStartTakeTheBus).click();
+        waitForElementPrescence(buttonStart);
+        Assert.assertEquals(driver.findElement(buttonStart).getText(), "Start");
+        driver.findElement(buttonStart).click();
         waitForElementPrescence(driver.findElement(answer1));
         Assert.assertTrue(driver.findElement(answer1).isDisplayed());
         driver.switchTo().defaultContent();
@@ -119,12 +119,12 @@ public class TakeTheBusScreen extends Common {
         Assert.assertEquals(driver.getCurrentUrl(),"https://responsivefight.herokuapp.com/leaderboard");
     }
 
-    public static void incorrectAnswerTakeTheBusChallenge() {
+    public static void incorrectAnswerPublicPlaceChallenge() {
         driver.findElement(takeTheBusChallengeTitle).click();
         driver.switchTo().activeElement();
-        waitForElementPrescence(buttonStartTakeTheBus);
-        Assert.assertEquals(driver.findElement(TakeTheBusScreen.buttonStartTakeTheBus).getText(), "Start");
-        driver.findElement(buttonStartTakeTheBus).click();
+        waitForElementPrescence(buttonStart);
+        Assert.assertEquals(driver.findElement(buttonStart).getText(), "Start");
+        driver.findElement(buttonStart).click();
         waitForElementPrescence(driver.findElement(answer2));
         Assert.assertTrue(driver.findElement(answer2).isDisplayed());
         driver.switchTo().defaultContent();
@@ -167,31 +167,32 @@ public class TakeTheBusScreen extends Common {
         Assert.assertTrue(driver.findElement(answer2).isDisplayed());
     }
 
-    public static void timeOutTryAgainTakeTheBusChallenge() throws InterruptedException {
+    public static void timeOutTryAgainPublicPlaceChallenge() throws InterruptedException {
         driver.findElement(takeTheBusChallengeTitle).click();
         driver.switchTo().activeElement();
-        waitForElementPrescence(buttonStartTakeTheBus);
-        Assert.assertEquals(driver.findElement(TakeTheBusScreen.buttonStartTakeTheBus).getText(), "Start");
-        driver.findElement(buttonStartTakeTheBus).click();
+        waitForElementPrescence(buttonStart);
+        Assert.assertEquals(driver.findElement(buttonStart).getText(), "Start");
+        driver.findElement(buttonStart).click();
         waitForElementPrescence(driver.findElement(answer2));
         Assert.assertTrue(driver.findElement(answer2).isDisplayed());
-        Thread.sleep(10000);
+        Thread.sleep(30000);
         driver.switchTo().activeElement();
         driver.findElement(outOfTimeTryAgain).click();
         Assert.assertTrue(driver.findElement(answer2).isDisplayed());
     }
 
-    public static void timeOutReturnHomeTakeTheBusChallenge() throws InterruptedException {
+    public static void timeOutReturnHomePublicPlaceChallenge() throws InterruptedException {
         driver.findElement(takeTheBusChallengeTitle).click();
         driver.switchTo().activeElement();
-        waitForElementPrescence(buttonStartTakeTheBus);
-        Assert.assertEquals(driver.findElement(TakeTheBusScreen.buttonStartTakeTheBus).getText(), "Start");
-        driver.findElement(buttonStartTakeTheBus).click();
+        waitForElementPrescence(buttonStart);
+        Assert.assertEquals(driver.findElement(buttonStart).getText(), "Start");
+        driver.findElement(buttonStart).click();
         waitForElementPrescence(driver.findElement(answer2));
         Assert.assertTrue(driver.findElement(answer2).isDisplayed());
-        Thread.sleep(10000);
+        Thread.sleep(30000);
         driver.switchTo().activeElement();
         driver.findElement(outOfTimeReturnHome).click();
         Assert.assertEquals(driver.getCurrentUrl(),"https://responsivefight.herokuapp.com/covid");
     }
 }
+

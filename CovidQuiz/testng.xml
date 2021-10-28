@@ -37,4 +37,30 @@
             </class>
         </classes>
     </test>
+    <test name="Take the Bus Challenge">
+        <classes>
+            <class name="tests.GoToAPublicPlaceTests">
+                <methods>
+                    <include name="test_01_verifyCorrectAnswerPublicPlaceChallengeTryNextBattle"/>
+                    <include name="test_02_verifyCorrectAnswerPublicPlaceChallengeCheckYourFinalScore"/>
+                    <include name="test_03_verifyIncorrectAnswerPublicPlaceChallenge"/>
+                    <include name="test_04_verifyTimeoutTryAgain"/>
+                    <include name="test_05_verifyTimeoutReturnHome"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Take the Bus Challenge">
+        <classes>
+            <class name="tests.GoToOfficeTests">
+                <methods>
+                    <include name="test_01_verifyCorrectAnswerOfficeChallengeTryNextBattle"/>
+                    <include name="test_02_verifyCorrectAnswerOfficeChallengeCheckYourFinalScore"/>
+                    <include name="test_03_verifyIncorrectAnswerOfficeChallenge"/>
+                    <include name="test_04_verifyTimeoutTryAgain"/>
+                    <include name="test_05_verifyTimeoutReturnHome"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
 </suite>
