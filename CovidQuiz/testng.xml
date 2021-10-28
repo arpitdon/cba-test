@@ -1,65 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="UI Regression Suite">
+<suite name="Regression Suite">
     <parameter name="browser" value="chrome"/>
-    <test name="Login">
+<!--    <test name="UI Regression">-->
+<!--        <classes>-->
+<!--            <class name="tests.LoginTests">-->
+<!--                <methods>-->
+<!--                    <include name="test_01_PageTitle"/>-->
+<!--                    <include name="test_02_NullWarriorName"/>-->
+<!--                    <include name="test_03_WarriorNameWithMoreThan10Characters"/>-->
+<!--                    <include name="test_04_ValidWarriorName"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--            <class name="tests.AreYouGameChallengeTests">-->
+<!--                <methods>-->
+<!--                    <include name="test_01_verifyCorrectAnswerAreYouGameChallenge"/>-->
+<!--                    <include name="test_02_verifyIncorrectAnswerAreYouGameChallenge"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--            <class name="tests.TakeTheBusTests">-->
+<!--                <methods>-->
+<!--                    <include name="test_01_verifyCorrectAnswerTakeTheBusChallengeTryNextBattle"/>-->
+<!--                    <include name="test_02_verifyCorrectAnswerTakeTheBusChallengeCheckYourFinalScore"/>-->
+<!--                    <include name="test_03_verifyIncorrectAnswerTakeTheBusChallenge"/>-->
+<!--                    <include name="test_04_verifyTimeoutTryAgain"/>-->
+<!--                    <include name="test_05_verifyTimeoutReturnHome"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--            <class name="tests.GoToAPublicPlaceTests">-->
+<!--                <methods>-->
+<!--                    <include name="test_01_verifyCorrectAnswerPublicPlaceChallengeTryNextBattle"/>-->
+<!--                    <include name="test_02_verifyCorrectAnswerPublicPlaceChallengeCheckYourFinalScore"/>-->
+<!--                    <include name="test_03_verifyIncorrectAnswerPublicPlaceChallenge"/>-->
+<!--                    <include name="test_04_verifyTimeoutTryAgain"/>-->
+<!--                    <include name="test_05_verifyTimeoutReturnHome"/>-->
+<!--                    <include name="test_06_verifyScoreShouldBe100"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--            <class name="tests.GoToOfficeTests">-->
+<!--                <methods>-->
+<!--                    <include name="test_01_verifyCorrectAnswerOfficeChallengeTryNextBattle"/>-->
+<!--                    <include name="test_02_verifyCorrectAnswerOfficeChallengeCheckYourFinalScore"/>-->
+<!--                    <include name="test_03_verifyIncorrectAnswerOfficeChallenge"/>-->
+<!--                    <include name="test_04_verifyTimeoutTryAgain"/>-->
+<!--                    <include name="test_05_verifyTimeoutReturnHome"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
+    <test name="API Regression">
         <classes>
-            <class name="tests.LoginTests">
+            <class name="tests.APITests">
                 <methods>
-                    <include name="test_01_PageTitle"/>
-                    <include name="test_02_NullWarriorName"/>
-                    <include name="test_03_WarriorNameWithMoreThan10Characters"/>
-                    <include name="test_04_ValidWarriorName"/>
-                </methods>
-            </class>
-        </classes>
-    </test>
-    <test name="Are You Game Challenge">
-        <classes>
-            <class name="tests.AreYouGameChallengeTests">
-                <methods>
-                    <include name="test_01_verifyCorrectAnswerAreYouGameChallenge"/>
-                    <include name="test_02_verifyIncorrectAnswerAreYouGameChallenge"/>
-                </methods>
-            </class>
-        </classes>
-    </test>
-    <test name="Take the Bus Challenge">
-        <classes>
-            <class name="tests.TakeTheBusTests">
-                <methods>
-                    <include name="test_01_verifyCorrectAnswerTakeTheBusChallengeTryNextBattle"/>
-                    <include name="test_02_verifyCorrectAnswerTakeTheBusChallengeCheckYourFinalScore"/>
-                    <include name="test_03_verifyIncorrectAnswerTakeTheBusChallenge"/>
-                    <include name="test_04_verifyTimeoutTryAgain"/>
-                    <include name="test_05_verifyTimeoutReturnHome"/>
-                </methods>
-            </class>
-        </classes>
-    </test>
-    <test name="Take the public place Challenge">
-        <classes>
-            <class name="tests.GoToAPublicPlaceTests">
-                <methods>
-                    <include name="test_01_verifyCorrectAnswerPublicPlaceChallengeTryNextBattle"/>
-                    <include name="test_02_verifyCorrectAnswerPublicPlaceChallengeCheckYourFinalScore"/>
-                    <include name="test_03_verifyIncorrectAnswerPublicPlaceChallenge"/>
-                    <include name="test_04_verifyTimeoutTryAgain"/>
-                    <include name="test_05_verifyTimeoutReturnHome"/>
-                    <include name="test_06_verifyScoreShouldBe100"/>
-                </methods>
-            </class>
-        </classes>
-    </test>
-    <test name="Take the Office Challenge">
-        <classes>
-            <class name="tests.GoToOfficeTests">
-                <methods>
-                    <include name="test_01_verifyCorrectAnswerOfficeChallengeTryNextBattle"/>
-                    <include name="test_02_verifyCorrectAnswerOfficeChallengeCheckYourFinalScore"/>
-                    <include name="test_03_verifyIncorrectAnswerOfficeChallenge"/>
-                    <include name="test_04_verifyTimeoutTryAgain"/>
-                    <include name="test_05_verifyTimeoutReturnHome"/>
+                    <include name="test_01_generateToken_200"/>
+                    <include name="test_02_verifyInvalidToken_403"/>
+                    <include name="test_03_verifyValidToken_200"/>
+                    <include name="test_04_verifyInvalidApp_400"/>
+                    <include name="test_05_verifyGetUsers_200"/>
+                    <include name="test_06_verifyGetUsersInvalidRequest_400"/>
+                    <include name="test_07_verifyAddUsersRequest_201"/>
+                    <include name="test_08_verifyUpdateUserRequest_204"/>
+                    <include name="test_09_verifyDeleteUserInvalidUser_401"/>
+                    <include name="test_10_verifyDeleteUserUser_204"/>
                 </methods>
             </class>
         </classes>
