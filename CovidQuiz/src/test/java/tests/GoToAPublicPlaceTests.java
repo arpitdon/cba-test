@@ -50,6 +50,12 @@ public class GoToAPublicPlaceTests extends Common {
         GoToAPublicPlaceScreen.timeOutReturnHomePublicPlaceChallenge();
     }
 
+    @Test
+    public void test_06_verifyScoreShouldBe100() throws InterruptedException {
+        LoginScreen.loginToApp("Hercules");
+        GoToAPublicPlaceScreen.checkScore();
+    }
+
     @AfterMethod
     public void tearDown() {
         driver.quit();

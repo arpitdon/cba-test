@@ -37,7 +37,7 @@
             </class>
         </classes>
     </test>
-    <test name="Take the Bus Challenge">
+    <test name="Take the public place Challenge">
         <classes>
             <class name="tests.GoToAPublicPlaceTests">
                 <methods>
@@ -46,11 +46,12 @@
                     <include name="test_03_verifyIncorrectAnswerPublicPlaceChallenge"/>
                     <include name="test_04_verifyTimeoutTryAgain"/>
                     <include name="test_05_verifyTimeoutReturnHome"/>
+                    <include name="test_06_verifyScoreShouldBe100"/>
                 </methods>
             </class>
         </classes>
     </test>
-    <test name="Take the Bus Challenge">
+    <test name="Take the Office Challenge">
         <classes>
             <class name="tests.GoToOfficeTests">
                 <methods>

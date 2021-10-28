@@ -9,6 +9,13 @@ OR
 
 Execute following maven goals from IDE - clean test
 
+Browsers can be configured by passing value as a parameter in testng.xml file.
+
 Reports will be generated in form of testng reports at the below path - 
 
 target/surefire-reports/index.html
+
+Chrome execution reports can be found at - 
+
+
+Firefox execution reports can be found at - 

@@ -6,8 +6,8 @@ import utils.Common;
 
 public class TakeTheBusScreen extends Common {
 
-    public static By takeTheBusChallengeTitle = By.id("bus");
-    public static By buttonStartTakeTheBus = By.id("bus_timer_start");
+    public static By challengeTitle = By.id("bus");
+    public static By buttonStartTakeTheBus = By.xpath("//button[contains(@id,'start')]");
     public static By answer1 = By.xpath("//a[contains(@id,'answer_1')]");
     public static By answer2 = By.xpath("//a[contains(@id,'answer_2')]");
     public static By successModalMessageText = By.xpath("//div[@id='bus_correct_modal']//h5[@id='staticBackdropLabel']");
@@ -20,7 +20,7 @@ public class TakeTheBusScreen extends Common {
     public static By outOfTimeReturnHome = By.xpath("//div[contains(@id,'out_of_time')]//button[contains(text(),'Return Home')]");
 
     public static void correctAnswerTakeTheBusChallengeTryNextBattle() {
-        driver.findElement(takeTheBusChallengeTitle).click();
+        driver.findElement(challengeTitle).click();
         driver.switchTo().activeElement();
         waitForElementPrescence(buttonStartTakeTheBus);
         Assert.assertEquals(driver.findElement(TakeTheBusScreen.buttonStartTakeTheBus).getText(), "Start");
@@ -70,7 +70,7 @@ public class TakeTheBusScreen extends Common {
     }
 
     public static void correctAnswerTakeTheBusChallengeCheckYourFinalScore() {
-        driver.findElement(takeTheBusChallengeTitle).click();
+        driver.findElement(challengeTitle).click();
         driver.switchTo().activeElement();
         waitForElementPrescence(buttonStartTakeTheBus);
         Assert.assertEquals(driver.findElement(TakeTheBusScreen.buttonStartTakeTheBus).getText(), "Start");
@@ -120,7 +120,7 @@ public class TakeTheBusScreen extends Common {
     }
 
     public static void incorrectAnswerTakeTheBusChallenge() {
-        driver.findElement(takeTheBusChallengeTitle).click();
+        driver.findElement(challengeTitle).click();
         driver.switchTo().activeElement();
         waitForElementPrescence(buttonStartTakeTheBus);
         Assert.assertEquals(driver.findElement(TakeTheBusScreen.buttonStartTakeTheBus).getText(), "Start");
@@ -168,7 +168,7 @@ public class TakeTheBusScreen extends Common {
     }
 
     public static void timeOutTryAgainTakeTheBusChallenge() throws InterruptedException {
-        driver.findElement(takeTheBusChallengeTitle).click();
+        driver.findElement(challengeTitle).click();
         driver.switchTo().activeElement();
         waitForElementPrescence(buttonStartTakeTheBus);
         Assert.assertEquals(driver.findElement(TakeTheBusScreen.buttonStartTakeTheBus).getText(), "Start");
@@ -182,7 +182,7 @@ public class TakeTheBusScreen extends Common {
     }
 
     public static void timeOutReturnHomeTakeTheBusChallenge() throws InterruptedException {
-        driver.findElement(takeTheBusChallengeTitle).click();
+        driver.findElement(challengeTitle).click();
         driver.switchTo().activeElement();
         waitForElementPrescence(buttonStartTakeTheBus);
         Assert.assertEquals(driver.findElement(TakeTheBusScreen.buttonStartTakeTheBus).getText(), "Start");

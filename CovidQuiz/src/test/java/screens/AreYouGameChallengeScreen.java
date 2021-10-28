@@ -9,8 +9,8 @@ import java.util.Set;
 
 public class AreYouGameChallengeScreen extends Common {
 
-    public static By areYouGameChallengeTitle = By.id("news");
-    public static By buttonStartAreYouGame = By.id("start");
+    public static By challengeTitle = By.id("news");
+    public static By buttonStartAreYouGame = By.xpath("//button[contains(@id,'start')]");
     public static By answer1 = By.id("answer_1");
     public static By answer2 = By.id("answer_2");
     public static By successModalMessageText = By.xpath("//div[@id='correctModal']//h5[@id='staticBackdropLabel']");
@@ -19,7 +19,7 @@ public class AreYouGameChallengeScreen extends Common {
     public static By buttonContinueSuccessModal = By.xpath("//div[@id='correctModal']//button[@id='continue']");
 
     public static void correctAnswerAreYouGameChallenge() {
-        driver.findElement(areYouGameChallengeTitle).click();
+        driver.findElement(challengeTitle).click();
         driver.switchTo().activeElement();
         waitForElementPrescence(buttonStartAreYouGame);
         Assert.assertEquals(driver.findElement(AreYouGameChallengeScreen.buttonStartAreYouGame).getText(), "Start");
@@ -68,7 +68,7 @@ public class AreYouGameChallengeScreen extends Common {
     }
 
     public static void incorrectAnswerAreYouGameChallenge() {
-        driver.findElement(areYouGameChallengeTitle).click();
+        driver.findElement(challengeTitle).click();
         driver.switchTo().activeElement();
         waitForElementPrescence(buttonStartAreYouGame);
         Assert.assertEquals(driver.findElement(AreYouGameChallengeScreen.buttonStartAreYouGame).getText(), "Start");

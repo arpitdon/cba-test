@@ -6,8 +6,8 @@ import utils.Common;
 
 public class GoToOfficeScreen extends Common {
 
-    public static By takeTheBusChallengeTitle = By.id("restaurant");
-    public static By buttonStart = By.id("restaurant_timer_start");
+    public static By challengeTitle = By.id("restaurant");
+    public static By buttonStart = By.xpath("//button[contains(@id,'start')]");
     public static By answer1 = By.xpath("//a[contains(@id,'answer_1')]");
     public static By answer2 = By.xpath("//a[contains(@id,'answer_2')]");
     public static By successModalMessageText = By.xpath("//div[contains(@id,'correct_modal')]//h5[@id='staticBackdropLabel']");
@@ -20,7 +20,7 @@ public class GoToOfficeScreen extends Common {
     public static By outOfTimeReturnHome = By.xpath("//div[contains(@id,'out_of_time')]//button[contains(text(),'Return Home')]");
 
     public static void correctAnswerOfficeChallengeTryNextBattle() {
-        driver.findElement(takeTheBusChallengeTitle).click();
+        driver.findElement(challengeTitle).click();
         driver.switchTo().activeElement();
         waitForElementPrescence(buttonStart);
         Assert.assertEquals(driver.findElement(buttonStart).getText(), "Start");
@@ -70,7 +70,7 @@ public class GoToOfficeScreen extends Common {
     }
 
     public static void correctAnswerOfficeChallengeCheckYourFinalScore() {
-        driver.findElement(takeTheBusChallengeTitle).click();
+        driver.findElement(challengeTitle).click();
         driver.switchTo().activeElement();
         waitForElementPrescence(buttonStart);
         Assert.assertEquals(driver.findElement(buttonStart).getText(), "Start");
@@ -120,7 +120,7 @@ public class GoToOfficeScreen extends Common {
     }
 
     public static void incorrectAnswerOfficeChallenge() {
-        driver.findElement(takeTheBusChallengeTitle).click();
+        driver.findElement(challengeTitle).click();
         driver.switchTo().activeElement();
         waitForElementPrescence(buttonStart);
         Assert.assertEquals(driver.findElement(buttonStart).getText(), "Start");
@@ -168,7 +168,7 @@ public class GoToOfficeScreen extends Common {
     }
 
     public static void timeOutTryAgainOfficeChallenge() throws InterruptedException {
-        driver.findElement(takeTheBusChallengeTitle).click();
+        driver.findElement(challengeTitle).click();
         driver.switchTo().activeElement();
         waitForElementPrescence(buttonStart);
         Assert.assertEquals(driver.findElement(buttonStart).getText(), "Start");
@@ -182,7 +182,7 @@ public class GoToOfficeScreen extends Common {
     }
 
     public static void timeOutReturnHomeOfficeChallenge() throws InterruptedException {
-        driver.findElement(takeTheBusChallengeTitle).click();
+        driver.findElement(challengeTitle).click();
         driver.switchTo().activeElement();
         waitForElementPrescence(buttonStart);
         Assert.assertEquals(driver.findElement(buttonStart).getText(), "Start");
