@@ -175,7 +175,7 @@ public class TakeTheBusScreen extends Common {
         driver.findElement(buttonStartTakeTheBus).click();
         waitForElementPrescence(driver.findElement(answer2));
         Assert.assertTrue(driver.findElement(answer2).isDisplayed());
-        Thread.sleep(10000);
+        Thread.sleep(30000);
         driver.switchTo().activeElement();
         driver.findElement(outOfTimeTryAgain).click();
         Assert.assertTrue(driver.findElement(answer2).isDisplayed());
@@ -189,7 +189,7 @@ public class TakeTheBusScreen extends Common {
         driver.findElement(buttonStartTakeTheBus).click();
         waitForElementPrescence(driver.findElement(answer2));
         Assert.assertTrue(driver.findElement(answer2).isDisplayed());
-        Thread.sleep(10000);
+        Thread.sleep(30000);
         driver.switchTo().activeElement();
         driver.findElement(outOfTimeReturnHome).click();
         Assert.assertEquals(driver.getCurrentUrl(),"https://responsivefight.herokuapp.com/covid");
