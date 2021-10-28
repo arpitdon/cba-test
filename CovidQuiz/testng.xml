@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Regression Suite">
+<suite name="UI Regression Suite">
+    <parameter name="browser" value="chrome"/>
     <test name="Login">
         <classes>
             <class name="tests.LoginTests">
@@ -19,6 +20,19 @@
                 <methods>
                     <include name="test_01_verifyCorrectAnswerAreYouGameChallenge"/>
                     <include name="test_02_verifyIncorrectAnswerAreYouGameChallenge"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Take the Bus Challenge">
+        <classes>
+            <class name="tests.TakeTheBusTests">
+                <methods>
+                    <include name="test_01_verifyCorrectAnswerTakeTheBusChallengeTryNextBattle"/>
+                    <include name="test_02_verifyCorrectAnswerTakeTheBusChallengeCheckYourFinalScore"/>
+                    <include name="test_03_verifyIncorrectAnswerTakeTheBusChallenge"/>
+                    <include name="test_04_verifyTimeoutTryAgain"/>
+                    <include name="test_05_verifyTimeoutReturnHome"/>
                 </methods>
             </class>
         </classes>

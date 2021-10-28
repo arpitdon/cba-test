@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import screens.AreYouGameChallengeScreen;
 import screens.LoginScreen;
@@ -15,8 +16,9 @@ import utils.SetDriver;
 public class AreYouGameChallengeTests extends Common {
 
     @BeforeMethod
-    public void setUp() {
-        SetDriver.setDriver("chrome");
+    @Parameters("browser")
+    public void setUp(String browser) {
+        SetDriver.setDriver(browser);
         driver.get("https://responsivefight.herokuapp.com/");
     }
 

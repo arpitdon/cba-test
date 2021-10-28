@@ -1,7 +1,7 @@
 # cba-test
 Codility Test for Commonwealth Bank of Australia
 
-This is a maven based framework which is configured with surefire plugin to execute Test Cases from testng.xml.
+This is a maven based framework which is configured for MacOS with surefire plugin to execute Test Cases from testng.xml.
 
 In order to execute test cases just use below command in terminal - mvn clean test
 

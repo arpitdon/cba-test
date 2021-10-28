@@ -11,8 +11,9 @@ import utils.SetDriver;
 public class LoginTests extends Common {
 
     @BeforeMethod
-    public void setUp() {
-        SetDriver.setDriver("chrome");
+    @Parameters("browser")
+    public void setUp(String browser) {
+        SetDriver.setDriver(browser);
         driver.get("https://responsivefight.herokuapp.com/");
     }
 
